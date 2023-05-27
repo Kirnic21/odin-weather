@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repo name</title>
+    <title>Weather Report!</title>
 </head>
 <body>
+    <div id="header">
+        Weather Report ゴゴゴゴゴゴゴゴ
+    </div>
     <form id = "locationForm">
         <label for ="location">
             Insert the location you want:
@@ -14,14 +17,20 @@
         <input type ="text" id ="inputLocation" name = "inputLocation"  placeholder = "insert a location" required oninput ="this.setCustomValidity('')">
         <input type ="submit" id = "submitButton">
     </form>
+    <div class ="loading_area">
+
+    </div>
     <div class="container">
-        <div class="today_information">
-            
-        </div>
-        <div class="forecast">
+        <div class="today_information box2 sb3">
+        "Weather Report":
             
         </div>
     </div>
+    <div id="weather_report_div"><img id ="weather_report" src ="Weather_Report.png"></div>
+    <footer>
+        <img id ="github" src = "github.png">
+    <a id = "link" href = https://github.com/Kirnic21>@Kirnic21</a>
+    </footer>
     <script src ="main.js"></script>
 </body>
 </html>

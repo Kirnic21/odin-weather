@@ -52,7 +52,7 @@ async function displayInformation(location){
 }
 function loadingGif()
 {
-    const container = document.querySelector(".container")
+    const container = document.querySelector(".loading_area")
     const gif = "a.gif"
     const gifContainer = document.createElement("img")
     gifContainer.classList.add("loading")
@@ -61,9 +61,15 @@ function loadingGif()
 }
 function unloadGif()
 {
-    const container = document.querySelector(".container")
+
     const gifContainer = document.querySelector(".loading")
+    if(gifContainer)
+    {
     gifContainer.remove()
+    }
+    else{
+        return false
+    }
 }
 
 export{ displayInformation,removeCard,loadingGif,unloadGif}

@@ -4,4 +4,5 @@ import { asyncAssignTodayWeather } from "./data"
 import { inputSelection, loadingGif } from "./dom"
 import {  isValidForecast, isValidforToday } from "./validation"
 import {displayInformation} from "./dom"
+displayInformation("London")
 isValidforToday()
