@@ -1,6 +1,7 @@
 import './style.css';
 
 import { Weather } from './class';
+import { loadingGif, unloadGif } from './dom';
 async function getData(location)
 {
     try{
@@ -11,16 +12,17 @@ async function getData(location)
     }
     catch(error)
     {
-        console.log("????????")
+        return false
     
     }
     
 }
 
 async function asyncAssignTodayWeather(location){
+    loadingGif()
     try{
         const data = await getData(location)
-        
+        unloadGif()
         const todayWeather = new Weather;
         todayWeather.humidity = data.current.humidity;
         todayWeather.tempC =  data.current.temp_c;
@@ -32,26 +34,10 @@ async function asyncAssignTodayWeather(location){
     }
     catch(error)
     {
-        console.log("Sorry")
+        unloadGif()
         return false
     }
     }
 
-    async function asyncAssignForecast(i,location){
-        try{
-        const data = await getData(location)
-       const theWeather = new Weather;
-       theWeather.humidity = data.forecast.forecastday[i].day.avghumidity;
-       theWeather.tempC =  data.forecast.forecastday[i].day.avgtemp_c;
-       theWeather.tempF = data.forecast.forecastday[i].day.avgtemp_f;
-       theWeather.cloud = "no info"
-       theWeather.condition = data.forecast.forecastday[i].day.condition.text
-       console.log(theWeather)
-        }
-        catch{
-            console.log("no")
-        }
-    }
 export {asyncAssignTodayWeather};
-export {asyncAssignForecast}
 export {getData}
